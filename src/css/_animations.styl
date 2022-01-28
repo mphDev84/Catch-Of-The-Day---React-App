@@ -1,0 +1,38 @@
+/*
+  Possible Animations:
+  enter
+  exit
+  appear Must set transitionAppear={true} on animation component
+*/
+.order-enter
+  transform: translateX(-120%) 
+  transition 0.5s
+  max-height: 0
+  padding 0 !important
+  &.order-enter-active
+    max-height: 60px
+    transform: translateX(0) rotate(1440deg)
+    padding 2rem 0 !important
+
+.order-exit
+  transform: translateX(0)
+  transition 0.5s
+  &.order-exit-active
+    transform: translateX(120%)
+    padding: 0 !important
+
+.count-enter
+  transition: 0.5s
+  transform: translateY(100%)
+  &.count-enter-active
+    transform: translateY(0)
+
+.count-exit
+  transform: translateY(0)
+  transition: 0.5s
+  position: absolute //this code allows for overlap of numbers during animation
+  left 0//see above
+  bottom 0//see above
+  &.count-exit-active
+    transform: translateY(-100%)
+  
